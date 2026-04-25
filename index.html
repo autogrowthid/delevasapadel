@@ -1,0 +1,2882 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delevasa Padel | Lapangan Padel Estetik Banjarbaru</title>
+    <link rel="icon" type="image/svg+xml" href="assets/logo%20Borneo%20Padel%20(pavico).svg">
+    <link rel="apple-touch-icon" href="assets/logo%20Borneo%20Padel%20(pavico).svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #FFF4F8;
+            --brand-red: #E91E63;
+            /* Sporty Orange */
+            --brand-red-mid: #C2185B;
+            --brand-dark: #111111;
+            --brand-darker: #0d0d0d;
+            --text-light: #FFFFFF;
+            --text-dark: #111111;
+            --accent-gold: #FF6FAE;
+            --muted: #6b7280;
+            --r-xl: 40px;
+            --r-lg: 32px;
+            --r-md: 24px;
+            --r-sm: 12px;
+            --r-pill: 999px;
+            --sans: 'Inter', sans-serif;
+            --sport: 'Oswald', sans-serif;
+            --serif: 'Playfair Display', serif;
+            --ease: cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            font-family: var(--sans);
+            background: var(--bg-main);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            position: relative;
+            z-index: 0
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit
+        }
+
+        ul {
+            list-style: none
+        }
+
+        img {
+            display: block;
+            max-width: 100%
+        }
+
+        ::-webkit-scrollbar {
+            width: 4px
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-main)
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--brand-red-mid);
+            border-radius: 2px
+        }
+
+        /* CONTAINER */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px
+        }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 11px 26px;
+            border-radius: var(--r-pill);
+            font-family: var(--sans);
+            font-weight: 700;
+            font-size: .82rem;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            cursor: pointer;
+            border: none;
+            transition: all .25s var(--ease);
+            white-space: nowrap
+        }
+
+        .btn-dark {
+            background: #111;
+            color: #fff
+        }
+
+        .btn-dark:hover {
+            background: #333;
+            transform: translateY(-2px)
+        }
+
+        .btn-light {
+            background: #fff;
+            color: var(--text-dark)
+        }
+
+        .btn-light:hover {
+            background: #e5e7eb;
+            transform: translateY(-2px)
+        }
+
+        .btn-light {
+            background: var(--brand-red-mid);
+            color: #fff
+        }
+
+        .btn-light:hover {
+            background: #ad1457;
+            transform: translateY(-2px)
+        }
+
+        /* SECTION META BAR */
+        .meta-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-top: 1px solid rgba(0, 0, 0, .08);
+            border-bottom: 1px solid rgba(0, 0, 0, .08);
+            margin-bottom: 40px
+        }
+
+        .meta-bar__side {
+            font-size: .75rem;
+            font-weight: 700;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            color: var(--muted)
+        }
+
+        .meta-bar__center {
+            font-family: var(--serif);
+            font-size: 1.4rem;
+            font-weight: 600;
+            letter-spacing: .04em
+        }
+
+        /* REVEAL */
+        .reveal {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity .6s var(--ease), transform .6s var(--ease)
+        }
+
+        .reveal.in {
+            opacity: 1;
+            transform: none
+        }
+
+        .d1 {
+            transition-delay: .1s
+        }
+
+        .d2 {
+            transition-delay: .2s
+        }
+
+        .d3 {
+            transition-delay: .3s
+        }
+
+        /* ================================================
+   HEADER
+================================================ */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 900;
+            height: 68px;
+            padding: 0 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background .35s var(--ease), box-shadow .35s
+        }
+
+        .site-header.scrolled {
+            background: rgba(247, 246, 242, .93);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            box-shadow: 0 1px 0 rgba(0, 0, 0, .07)
+        }
+
+        .site-header__logo {
+            font-family: var(--sans);
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: var(--brand-red);
+            letter-spacing: -.04em
+        }
+
+        .site-header__logo span {
+            color: var(--accent-gold)
+        }
+
+        .site-header__nav {
+            display: flex;
+            gap: 30px;
+            align-items: center
+        }
+
+        .site-header__nav a {
+            font-size: .87rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            position: relative;
+            transition: color .2s
+        }
+
+        .site-header__nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--brand-red);
+            transition: width .3s var(--ease)
+        }
+
+        .site-header__nav a:hover {
+            color: var(--brand-red)
+        }
+
+        .site-header__nav a:hover::after {
+            width: 100%
+        }
+
+        .site-header__nav .nav-cta {
+            background: var(--brand-red);
+            color: #fff;
+            padding: 9px 22px;
+            border-radius: var(--r-pill);
+            font-weight: 700;
+            font-size: .82rem
+        }
+
+        .site-header__nav .nav-cta::after {
+            display: none
+        }
+
+        .site-header__nav .nav-cta:hover {
+            background: var(--brand-red-mid)
+        }
+
+        /* ================================================
+   HERO
+================================================ */
+        .hero-wrap {
+            padding: 84px 40px 60px;
+            max-width: 1200px;
+            margin: 0 auto
+        }
+
+        .hero-card {
+            position: relative;
+            width: 100%;
+            height: 82vh;
+            min-height: 580px;
+            padding-bottom: 120px;
+            /* Spacer for bottom float cards */
+            border-radius: var(--r-xl);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center
+        }
+
+        .hero-card__img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 25%;
+            z-index: 1
+        }
+
+        .hero-card__overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, .2) 0%, rgba(0, 0, 0, .8) 100%);
+            z-index: 2
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: var(--sport);
+            text-transform: uppercase;
+        }
+
+        .hero-card__headline {
+            position: relative;
+            z-index: 3;
+            font-size: clamp(3rem, 5vw, 4rem);
+            font-family: var(--sport);
+            text-transform: uppercase;
+            font-weight: 600;
+            color: #fff;
+            text-align: center;
+            line-height: 1.12;
+            max-width: 860px;
+            padding: 0 20px;
+            margin-bottom: 100px;
+            /* Push text upwards avoiding bottom cards */
+            text-shadow: 0 4px 24px rgba(0, 0, 0, .22)
+        }
+
+        .hero-card__headline em {
+            font-style: italic;
+            color: rgba(255, 255, 255, .88)
+        }
+
+        /* Float cards bottom-left */
+        .hero-floats {
+            position: absolute;
+            bottom: 36px;
+            left: 36px;
+            z-index: 4;
+            display: flex;
+            flex-direction: column;
+            gap: 16px
+        }
+
+        .hero-bento {
+            background: var(--bg-main);
+            border-radius: var(--r-md);
+            padding: 22px 26px;
+            width: 268px;
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4)
+        }
+
+        .hero-bento.dark {
+            background: var(--brand-dark);
+            color: #fff
+        }
+
+        .hero-bento__title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-dark)
+        }
+
+        .hero-bento.dark .hero-bento__title {
+            color: #fff
+        }
+
+        .hero-bento__body {
+            font-size: .84rem;
+            color: var(--muted);
+            line-height: 1.6;
+            margin-bottom: 16px
+        }
+
+        .hero-bento.dark .hero-bento__body {
+            color: rgba(255, 255, 255, .6)
+        }
+
+        .hero-price-big {
+            font-family: var(--sans);
+            font-size: 2.22rem;
+            /* Kept slightly big so styling balances, original was 1.9rem */
+            font-weight: 700;
+            color: var(--accent-gold);
+            line-height: 1;
+            margin-bottom: 4px
+        }
+
+        .hero-price-unit {
+            display: block;
+            font-size: .8rem;
+            color: rgba(255, 255, 255, .55);
+            font-family: var(--sans);
+            margin-bottom: 16px
+        }
+
+        /* Float stats right */
+        .hero-stats-right {
+            position: absolute;
+            bottom: 36px;
+            right: 36px;
+            z-index: 4;
+            display: flex;
+            flex-direction: column;
+            gap: 10px
+        }
+
+        .hstat {
+            background: rgba(255, 255, 255, .12);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, .18);
+            border-radius: var(--r-sm);
+            padding: 12px 18px;
+            text-align: center;
+            color: #fff;
+            min-width: 100px
+        }
+
+        .hstat__num {
+            font-family: var(--sans);
+            font-size: 1.55rem;
+            font-weight: 700;
+            line-height: 1;
+            color: #fff;
+        }
+
+        .hstat__lbl {
+            font-size: .65rem;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, .55);
+            margin-top: 3px
+        }
+
+        /* ================================================
+   ABOUT
+================================================ */
+        .about-wrap {
+            padding: 80px 40px;
+            max-width: 1200px;
+            margin: 0 auto
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+            align-items: stretch
+        }
+
+        .about-text-card {
+            background: var(--brand-dark);
+            color: #fff;
+            border-radius: var(--r-lg);
+            padding: 56px 48px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden
+        }
+
+        .about-text-card::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 40px solid rgba(255, 255, 255, .04)
+        }
+
+        .about-badge {
+            display: inline-block;
+            padding: 6px 14px;
+            font-family: var(--serif);
+            font-style: italic;
+            border: 1px solid rgba(255, 255, 255, .25);
+            border-radius: var(--r-pill);
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, .7);
+            margin-bottom: 22px;
+            align-self: flex-start
+        }
+
+        .about-title {
+            font-size: clamp(2.2rem, 3.5vw, 3rem);
+            font-weight: 600;
+            font-family: var(--sport);
+            text-transform: uppercase;
+            line-height: 1.15;
+            margin-bottom: 22px;
+            color: #fff
+        }
+
+        .about-desc {
+            font-size: .97rem;
+            line-height: 1.78;
+            color: rgba(255, 255, 255, .7);
+            margin-bottom: 16px
+        }
+
+        .about-note {
+            margin-top: 10px;
+            padding: 15px 18px;
+            background: rgba(255, 255, 255, .06);
+            border-left: 3px solid var(--accent-gold);
+            border-radius: 6px;
+            font-size: .86rem;
+            color: rgba(255, 255, 255, .78);
+            line-height: 1.6
+        }
+
+        .about-note strong {
+            color: var(--accent-gold)
+        }
+
+        .about-img-wrap {
+            position: relative;
+            border-radius: var(--r-lg);
+            overflow: visible;
+            min-height: 480px
+        }
+
+        .about-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: var(--r-lg);
+            display: block
+        }
+
+        .about-stamp {
+            position: absolute;
+            top: 50%;
+            left: -52px;
+            transform: translateY(-50%);
+            width: 108px;
+            height: 108px;
+            border-radius: 50%;
+            background: var(--bg-main);
+            border: 8px solid var(--bg-main);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            z-index: 10;
+            line-height: 1.2
+        }
+
+        .about-stamp__main {
+            font-weight: 800;
+            font-size: .88rem;
+            color: var(--brand-red);
+            letter-spacing: .04em
+        }
+
+        .about-stamp__sub {
+            font-size: .66rem;
+            font-weight: 600;
+            color: var(--muted);
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            margin-top: 2px
+        }
+
+        /* ================================================
+   NEWS & EVENTS
+================================================ */
+        .news-wrap {
+            padding: 0 40px 80px;
+            max-width: 1200px;
+            margin: 0 auto
+        }
+
+        .news-block {
+            background: var(--brand-red);
+            color: #fff;
+            border-radius: var(--r-xl);
+            padding: 56px;
+            position: relative;
+            clip-path: polygon(0 0, calc(100% - 90px) 0, 100% 90px, 100% 100%, 0 100%)
+        }
+
+        .news-block::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 90px;
+            height: 90px;
+            background: var(--bg-main);
+            border-bottom-left-radius: var(--r-xl);
+            pointer-events: none
+        }
+
+        .news-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 44px
+        }
+
+        .news-title {
+            font-size: 3rem;
+            font-weight: 600;
+            font-family: var(--sport);
+            text-transform: uppercase;
+            color: #fff;
+        }
+
+        .news-list {
+            display: flex;
+            flex-direction: column
+        }
+
+        .news-cta {
+            margin-top: 50px;
+            background: var(--brand-dark);
+            border-radius: var(--r-md);
+            padding: 40px 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+            text-align: left;
+        }
+
+        .news-cta__text h3 {
+            font-family: var(--sport);
+            font-size: 2.2rem;
+            text-transform: uppercase;
+            color: #fff;
+            margin-bottom: 8px;
+            line-height: 1.1;
+        }
+
+        .news-cta__text p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.05rem;
+            max-width: 550px;
+            line-height: 1.5;
+            font-family: var(--sans);
+        }
+
+        @media (max-width: 768px) {
+            .news-cta {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 30px;
+            }
+        }
+
+        .news-item {
+            display: grid;
+            grid-template-columns: 200px 1fr auto;
+            align-items: center;
+            gap: 32px;
+            padding: 26px 0;
+            border-top: 1px solid rgba(255, 255, 255, .1);
+            transition: padding .25s var(--ease), background .25s;
+            cursor: pointer
+        }
+
+        .news-item:hover {
+            padding-left: 18px;
+            padding-right: 18px;
+            margin-left: -18px;
+            margin-right: -18px;
+            background: rgba(255, 255, 255, .04);
+            border-radius: var(--r-md)
+        }
+
+        .news-item__time {
+            font-size: .84rem;
+            color: rgba(255, 255, 255, .5);
+            margin-bottom: 3px
+        }
+
+        .news-item__date {
+            font-size: .84rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, .72);
+            letter-spacing: .05em;
+            text-transform: uppercase
+        }
+
+        .news-item__title {
+            font-family: var(--sans);
+            font-size: 1.45rem;
+            font-weight: 600;
+            color: #fff
+        }
+
+        .news-item__sub {
+            font-size: .8rem;
+            color: rgba(255, 255, 255, .42);
+            margin-top: 4px
+        }
+
+        .news-item--done .news-item__title {
+            color: rgba(255, 255, 255, .55)
+        }
+
+        .tag-done {
+            display: inline-block;
+            padding: 5px 14px;
+            border-radius: var(--r-pill);
+            font-size: .7rem;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            background: rgba(255, 255, 255, .09);
+            color: rgba(255, 255, 255, .5)
+        }
+
+        /* ================================================
+   PRICING  (Bento)
+================================================ */
+        .pricing-wrap {
+            padding: 80px 40px;
+            max-width: 1200px;
+            margin: 0 auto
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 50px
+        }
+
+        .pricing-header h2 {
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            font-family: var(--sport);
+            text-transform: uppercase;
+            color: var(--brand-red);
+        }
+
+        .pricing-header p {
+            color: var(--muted);
+            font-size: .94rem
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            grid-auto-rows: 265px
+        }
+
+        /* Wide promo */
+        .price-promo {
+            grid-column: span 2;
+            background: var(--brand-dark);
+            border-radius: var(--r-lg);
+            padding: 40px 44px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #fff;
+            position: relative;
+            overflow: hidden
+        }
+
+        .price-promo::before {
+            content: '';
+            position: absolute;
+            right: -60px;
+            top: -60px;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 50px solid rgba(255, 255, 255, .05)
+        }
+
+        .price-promo__label {
+            font-size: .7rem;
+            font-weight: 700;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            margin-bottom: 12px
+        }
+
+        .price-promo__title {
+            font-family: var(--sans);
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 10px
+        }
+
+        .price-promo__desc {
+            font-size: .87rem;
+            color: rgba(255, 255, 255, .62);
+            max-width: 280px
+        }
+
+        .price-promo__right {
+            text-align: right
+        }
+
+        .price-promo__price {
+            font-family: var(--sans);
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 16px;
+            line-height: 1.1
+        }
+
+        .price-promo__unit {
+            font-size: .85rem;
+            font-weight: 400;
+            font-family: var(--sans);
+            color: rgba(255, 255, 255, .5)
+        }
+
+        /* Image cards */
+        .price-card {
+            position: relative;
+            border-radius: var(--r-lg);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 28px;
+            color: #fff;
+            cursor: pointer
+        }
+
+        .price-card__bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            transition: transform .6s var(--ease)
+        }
+
+        .price-card:hover .price-card__bg {
+            transform: scale(1.06)
+        }
+
+        .price-card__overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, .82) 0%, rgba(0, 0, 0, .12) 55%, transparent 100%);
+            z-index: 2
+        }
+
+        .price-card__body {
+            position: relative;
+            z-index: 3
+        }
+
+        .price-card__type {
+            font-family: var(--sans);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 4px
+        }
+
+        .price-card__cost {
+            font-size: .97rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, .72);
+            margin-bottom: 18px
+        }
+
+        .price-card__tag {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            z-index: 4;
+            background: #fff;
+            color: var(--text-dark);
+            padding: 5px 12px;
+            border-radius: var(--r-pill);
+            font-size: .7rem;
+            font-weight: 800;
+            letter-spacing: .04em
+        }
+
+        /* ================================================
+   SCHEDULE
+================================================ */
+        .schedule-wrap {
+            padding: 0 40px 80px;
+            max-width: 1200px;
+            margin: 0 auto
+        }
+
+        /* ================================================
+   BOOKING
+================================================ */
+        .booking-wrap {
+            padding: 80px 40px;
+            max-width: 1200px;
+            margin: 0 auto
+        }
+
+        .booking-block {
+            background: var(--brand-dark);
+            border-radius: var(--r-xl);
+            padding: 64px;
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 64px;
+            color: #fff;
+            position: relative;
+            overflow: hidden
+        }
+
+        .booking-block::before {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 70px solid rgba(255, 255, 255, .04)
+        }
+
+        .booking-label {
+            font-size: .7rem;
+            font-weight: 700;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            margin-bottom: 16px
+        }
+
+        .booking-headline {
+            font-family: var(--sans);
+            font-size: 3rem;
+            font-weight: 600;
+            line-height: 1.1;
+            color: #fff;
+            margin-bottom: 22px
+        }
+
+        .booking-desc {
+            color: rgba(255, 255, 255, .58);
+            font-size: .94rem;
+            line-height: 1.74;
+            margin-bottom: 34px;
+            max-width: 370px
+        }
+
+        .booking-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 18px
+        }
+
+        .bstep {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start
+        }
+
+        .bstep-num {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            background: rgba(255, 111, 174, .16);
+            border: 1px solid rgba(255, 111, 174, .34);
+            color: var(--accent-gold);
+            font-weight: 700;
+            font-size: .8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        .bstep-text {
+            font-size: .89rem;
+            color: rgba(255, 255, 255, .62);
+            line-height: 1.6;
+            padding-top: 5px
+        }
+
+        .bstep-text strong {
+            color: #fff
+        }
+
+        .booking-form {
+            background: var(--text-light);
+            border-radius: var(--r-lg);
+            padding: 40px;
+            color: var(--text-dark);
+            position: relative;
+            z-index: 1
+        }
+
+        .bf-title {
+            font-family: var(--sans);
+            font-size: 1.65rem;
+            font-weight: 700;
+            color: var(--brand-red);
+            margin-bottom: 6px
+        }
+
+        .bf-sub {
+            color: var(--muted);
+            font-size: .82rem;
+            margin-bottom: 26px
+        }
+
+        .fgroup {
+            margin-bottom: 15px
+        }
+
+        .flabel {
+            display: block;
+            font-size: .7rem;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--brand-red);
+            margin-bottom: 7px
+        }
+
+        .finput,
+        .fselect {
+            width: 100%;
+            padding: 13px 15px;
+            border-radius: 10px;
+            border: 1.5px solid rgba(0, 0, 0, .09);
+            background: #fff;
+            font-family: var(--sans);
+            font-size: .9rem;
+            color: var(--text-dark);
+            transition: border-color .2s, box-shadow .2s;
+            appearance: none
+        }
+
+        .finput:focus,
+        .fselect:focus {
+            outline: none;
+            border-color: var(--brand-red-mid);
+            box-shadow: 0 0 0 3px rgba(233, 30, 99, .18)
+        }
+
+        .frow {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px
+        }
+
+        .fsel-wrap {
+            position: relative
+        }
+
+        .fsel-wrap::after {
+            content: "\25BE";
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--brand-red);
+            pointer-events: none;
+            font-size: .82rem
+        }
+
+        .fsubmit {
+            width: 100%;
+            padding: 15px;
+            background: var(--brand-red);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-family: var(--sans);
+            font-size: .86rem;
+            font-weight: 700;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all .25s var(--ease);
+            margin-top: 6px
+        }
+
+        .fsubmit:hover {
+            background: var(--brand-red-mid);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, .2)
+        }
+
+        .falt {
+            text-align: center;
+            margin-top: 13px;
+            color: var(--muted);
+            font-size: .8rem
+        }
+
+        .falt a {
+            color: var(--brand-red);
+            font-weight: 600
+        }
+
+        /* ================================================
+   TESTIMONIALS
+================================================ */
+        .testi-wrap {
+            padding: 80px 40px;
+            max-width: 1200px;
+            margin: 0 auto
+        }
+
+        .testi-hdr {
+            margin-bottom: 46px
+        }
+
+        .testi-hdr__label {
+            font-size: .7rem;
+            font-weight: 700;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: var(--brand-red-mid);
+            margin-bottom: 12px
+        }
+
+        .testi-hdr__title {
+            font-family: var(--sans);
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--brand-red)
+        }
+
+        .testi-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px
+        }
+
+        .testi-card {
+            background: var(--text-light);
+            border: 1px solid rgba(0, 0, 0, .06);
+            border-radius: var(--r-lg);
+            padding: 32px;
+            transition: transform .3s var(--ease), box-shadow .3s
+        }
+
+        .testi-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, .07)
+        }
+
+        .testi-card.featured {
+            background: var(--brand-red);
+            border-color: transparent
+        }
+
+        .testi-stars {
+            display: flex;
+            gap: 3px;
+            margin-bottom: 15px
+        }
+
+        .testi-stars span {
+            display: inline-block;
+            width: 13px;
+            height: 13px;
+            background: var(--accent-gold);
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)
+        }
+
+        .testi-text {
+            font-size: .96rem;
+            line-height: 1.72;
+            color: var(--text-dark);
+            font-style: italic;
+            margin-bottom: 22px
+        }
+
+        .testi-card.featured .testi-text {
+            color: rgba(255, 255, 255, .78)
+        }
+
+        .testi-author {
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .testi-av {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--bg-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: .82rem;
+            color: var(--brand-red)
+        }
+
+        .testi-card.featured .testi-av {
+            background: rgba(201, 168, 76, .18);
+            color: var(--accent-gold)
+        }
+
+        .testi-name {
+            font-weight: 700;
+            font-size: .87rem
+        }
+
+        .testi-card.featured .testi-name {
+            color: #fff
+        }
+
+        .testi-role {
+            font-size: .74rem;
+            color: var(--muted)
+        }
+
+        .testi-card.featured .testi-role {
+            color: rgba(255, 255, 255, .42)
+        }
+
+        /* ================================================
+   FOOTER
+================================================ */
+        .footer {
+            background: var(--text-dark);
+            color: #fff
+        }
+
+        .footer-top {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 76px 40px 60px;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.1fr;
+            gap: 52px;
+            border-bottom: 1px solid rgba(255, 255, 255, .07)
+        }
+
+        .footer-logo {
+            font-family: var(--sans);
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -.04em;
+            margin-bottom: 13px
+        }
+
+        .footer-logo span {
+            color: var(--accent-gold)
+        }
+
+        .footer-tagline {
+            color: rgba(255, 255, 255, .38);
+            font-size: .87rem;
+            line-height: 1.75;
+            max-width: 256px;
+            margin-bottom: 26px
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 10px
+        }
+
+        .footer-social {
+            height: 36px;
+            width: 36px;
+            padding: 0;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, .06);
+            border: 1px solid rgba(255, 255, 255, .08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0;
+            color: rgba(255, 255, 255, .55);
+            transition: all .2s;
+            cursor: pointer
+        }
+
+        .footer-social svg {
+            width: 18px;
+            height: 18px;
+            display: block;
+            fill: currentColor;
+        }
+
+        .footer-social:hover {
+            background: var(--accent-gold);
+            border-color: var(--accent-gold);
+            color: #fff
+        }
+
+        .footer-col-title {
+            font-size: .68rem;
+            font-weight: 700;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            margin-bottom: 18px
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 11px
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, .42);
+            font-size: .87rem;
+            transition: color .2s
+        }
+
+        .footer-links a:hover {
+            color: #fff
+        }
+
+        .footer-brandmark {
+            margin-top: 22px;
+            width: clamp(130px, 14vw, 170px);
+            display: block;
+            margin-left: auto;
+            filter: drop-shadow(0 10px 24px rgba(0, 0, 0, .35));
+        }
+
+        .fci {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 14px;
+            align-items: flex-start
+        }
+
+        .fci-label {
+            font-size: .66rem;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, .28);
+            margin-top: 2px;
+            flex-shrink: 0;
+            width: 28px
+        }
+
+        .fci-val {
+            color: rgba(255, 255, 255, .42);
+            font-size: .85rem;
+            line-height: 1.6
+        }
+
+        .fci-val strong {
+            color: rgba(255, 255, 255, .78);
+            display: block;
+            margin-bottom: 2px
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center
+        }
+
+        .footer-copy {
+            color: rgba(255, 255, 255, .22);
+            font-size: .78rem
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 22px
+        }
+
+        .footer-legal a {
+            color: rgba(255, 255, 255, .22);
+            font-size: .78rem;
+            transition: color .2s
+        }
+
+        .footer-legal a:hover {
+            color: rgba(255, 255, 255, .6)
+        }
+
+        .dev-watermark {
+            position: fixed;
+            right: 18px;
+            bottom: 18px;
+            z-index: 1200;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 10px 8px 8px;
+            border-radius: 999px;
+            background: rgba(10, 10, 10, 0.48);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+            text-decoration: none;
+            transition: background .25s var(--ease), border-color .25s var(--ease), transform .25s var(--ease);
+        }
+
+        .dev-watermark:hover,
+        .dev-watermark:focus-visible {
+            background: rgba(10, 10, 10, 0.72);
+            border-color: rgba(255, 255, 255, 0.34);
+            transform: translateY(-2px);
+        }
+
+        .dev-watermark__dot {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.32);
+            display: grid;
+            place-items: center;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 12px;
+            line-height: 1;
+        }
+
+        .dev-watermark__text {
+            max-width: 0;
+            overflow: hidden;
+            white-space: nowrap;
+            color: rgba(255, 255, 255, 0.86);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: .01em;
+            opacity: 0;
+            transition: max-width .35s var(--ease), opacity .25s var(--ease);
+        }
+
+        .dev-watermark:hover .dev-watermark__text,
+        .dev-watermark:focus-visible .dev-watermark__text {
+            max-width: 280px;
+            opacity: 1;
+        }
+
+        /* ================================================
+           BENTO GALLERY
+        ================================================ */
+        .gallery-wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 120px 40px;
+        }
+
+        .gallery-header {
+            margin-bottom: 50px;
+        }
+
+        .gallery-header h2 {
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            color: var(--brand-red);
+            margin-bottom: 10px;
+        }
+
+        .gallery-header p {
+            color: var(--muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            font-family: var(--sans);
+        }
+
+        .bento-gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 170px);
+            gap: 14px;
+        }
+
+        .bento-item {
+            border-radius: var(--r-xl);
+            overflow: hidden;
+            position: relative;
+            background: #e6e4df;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .bento-item img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s var(--ease);
+        }
+
+        .bento-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .bento-large {
+            grid-column: 1 / 3;
+            grid-row: 1 / 3;
+        }
+
+        .bento-wide {
+            grid-column: 1 / 5;
+            grid-row: 3 / 4;
+        }
+
+        .bento-img-top {
+            grid-column: 4 / 5;
+            grid-row: 1 / 2;
+        }
+
+        .bento-text-dark {
+            background: #4a0f2f;
+            color: #fff;
+            padding: 30px;
+            grid-column: 3 / 4;
+            grid-row: 1 / 2;
+            border-radius: var(--r-xl) 8px var(--r-xl) var(--r-xl);
+        }
+
+        .bento-text-gold {
+            background: #e91e63;
+            color: #fff;
+            padding: 30px;
+            grid-column: 4 / 5;
+            grid-row: 2 / 3;
+            border-radius: 8px var(--r-xl) var(--r-xl) var(--r-xl);
+        }
+
+        .bento-empty {
+            grid-column: 3 / 4;
+            grid-row: 2 / 3;
+            background: #d8d7d3;
+        }
+
+        .bento-wide.bento-empty {
+            background: #d8d7d3;
+        }
+
+        .bento-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 60px 40px 40px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+            color: #fff;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .bento-overlay h3 {
+            font-size: clamp(2rem, 3.5vw, 3.2rem);
+            line-height: 1.1;
+            margin: 0;
+            text-transform: none;
+            font-weight: 500;
+            font-family: var(--sans);
+        }
+
+        .bento-text-dark h3,
+        .bento-text-gold h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            line-height: 1.2;
+            font-weight: 700;
+            text-transform: none;
+            font-family: var(--sans);
+        }
+
+        .bento-text-dark p,
+        .bento-text-gold p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            line-height: 1.5;
+            font-family: var(--sans);
+        }
+
+        .bento-arrow {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            align-self: flex-end;
+            margin-top: auto;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            color: #fff;
+        }
+
+        .bento-text-dark:hover .bento-arrow,
+        .bento-text-gold:hover .bento-arrow {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(4px, -4px);
+        }
+
+        @media (max-width: 900px) {
+            .bento-gallery {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: 260px 220px 220px 190px;
+            }
+
+            .bento-large {
+                grid-column: 1 / 3;
+                grid-row: 1 / 2;
+            }
+
+            .bento-text-dark {
+                grid-column: 1 / 2;
+                grid-row: 2 / 3;
+            }
+
+            .bento-img-top {
+                grid-column: 2 / 3;
+                grid-row: 2 / 3;
+            }
+
+            .bento-empty {
+                grid-column: 1 / 2;
+                grid-row: 3 / 4;
+            }
+
+            .bento-text-gold {
+                grid-column: 2 / 3;
+                grid-row: 3 / 4;
+            }
+
+            .bento-wide {
+                grid-column: 1 / 3;
+                grid-row: 4 / 5;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .gallery-wrap {
+                padding: 60px 20px;
+            }
+
+            .bento-gallery {
+                grid-template-columns: 1fr;
+                grid-auto-rows: 280px;
+                grid-template-rows: none;
+            }
+
+            .bento-large,
+            .bento-wide,
+            .bento-img-top,
+            .bento-empty,
+            .bento-text-dark,
+            .bento-text-gold {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+
+            .bento-large {
+                grid-row: span 2;
+            }
+
+            .bento-overlay h3 {
+                font-size: 2.2rem;
+            }
+
+            .dev-watermark {
+                right: 12px;
+                bottom: 12px;
+            }
+
+            .dev-watermark__text {
+                display: none;
+            }
+        }
+
+        /* ================================================
+           INTERACTIVE SCHEDULE
+        ================================================ */
+        .interactive-schedule {
+            background: var(--brand-dark);
+            border-radius: var(--r-xl);
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 40px;
+            padding: 60px;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+            margin-top: 30px;
+        }
+
+        .isched-left {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .isched-cal {
+            background: #fff;
+            color: var(--brand-dark);
+            padding: 30px;
+            border-radius: var(--r-lg);
+        }
+
+        .cal-header {
+            font-family: var(--sport);
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .cal-days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.8rem;
+            margin-bottom: 16px;
+            color: var(--muted);
+        }
+
+        .cal-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+            text-align: center;
+        }
+
+        .cal-date {
+            width: 34px;
+            height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            border-radius: 50%;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .cal-date:hover:not(.muted):not(.active) {
+            background: #f0f0f0;
+        }
+
+        .cal-date.muted {
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .cal-date.active {
+            background: var(--brand-red);
+            color: #fff;
+            box-shadow: 0 4px 10px rgba(220, 53, 69, 0.3);
+        }
+
+        .isched-toggle {
+            display: flex;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 8px;
+            border-radius: var(--r-pill);
+            gap: 6px;
+        }
+
+        .tgl-btn {
+            flex: 1;
+            padding: 14px;
+            border: none;
+            background: transparent;
+            color: #fff;
+            border-radius: var(--r-pill);
+            cursor: pointer;
+            font-weight: 600;
+            font-family: var(--sans);
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        .tgl-btn.active {
+            background: var(--brand-red);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .booking-rental-info {
+            margin-top: 6px;
+            padding: 12px 16px;
+            border: 1px solid #333333;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .booking-rental-info__title {
+            margin: 0 0 8px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #aaaaaa;
+            letter-spacing: 0.01em;
+        }
+
+        .booking-rental-info__list {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .booking-rental-info__row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .booking-rental-info__item {
+            font-size: 11px;
+            font-weight: 400;
+            color: #888888;
+            line-height: 1.4;
+        }
+
+        .booking-rental-info__price {
+            font-size: 11px;
+            font-weight: 400;
+            color: #dddddd;
+            line-height: 1.4;
+            white-space: nowrap;
+        }
+
+        .isched-right {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .isched-header h3 {
+            color: #fff;
+            font-family: var(--sport);
+            font-size: 2.2rem;
+        }
+
+        .isched-header p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1.1rem;
+        }
+
+        .isched-slots {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 16px;
+        }
+
+        .slot-box {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 16px;
+            border-radius: var(--r-sm);
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .slot-time {
+            display: block;
+            font-family: var(--sport);
+            font-size: 1.6rem;
+            color: #fff;
+            margin-bottom: 2px;
+        }
+
+        .slot-price {
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        .slot-box.available .slot-price {
+            color: #ff6fae;
+        }
+
+        .slot-box.booked .slot-price {
+            color: #ff9ec6;
+        }
+
+        .slot-box.booked {
+            opacity: 0.4;
+            cursor: not-allowed;
+            background: transparent;
+        }
+
+        .slot-box.available:hover {
+            background: rgba(233, 30, 99, 0.16);
+            border-color: #ff6fae;
+            transform: translateY(-2px);
+        }
+
+        /* ================================================
+           REVIEWS & TESTIMONIALS (BENTOS)
+        ================================================ */
+        .review-bento {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 30px;
+        }
+
+        .review-main {
+            background: var(--brand-dark);
+            color: #fff;
+            border-radius: var(--r-xl);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 40px;
+            text-align: center;
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .review-score {
+            font-family: var(--sport);
+            font-size: 6rem;
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+
+        .review-stars {
+            color: #ff6fae;
+            font-size: 2.5rem;
+            letter-spacing: 4px;
+            margin-bottom: 16px;
+            line-height: 1;
+        }
+
+        .review-desc {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .review-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .review-card {
+            background: #fff;
+            border-radius: var(--r-md);
+            padding: 35px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+            transition: 0.3s;
+        }
+
+        .review-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-card p {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: var(--text-dark);
+            margin-bottom: 24px;
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        .rev-author {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--brand-red);
+            text-transform: uppercase;
+            font-family: var(--sport);
+            letter-spacing: 0.05em;
+        }
+
+        @media (max-width: 900px) {
+            .interactive-schedule {
+                grid-template-columns: 1fr;
+                padding: 40px 30px;
+                gap: 30px;
+            }
+
+            .review-bento {
+                grid-template-columns: 1fr;
+            }
+
+            .review-main {
+                padding: 40px;
+            }
+        }
+
+        /* ================================================
+           RESPONSIVE
+        ================================================ */
+        @media(max-width:1024px) {
+            .about-grid {
+                grid-template-columns: 1fr
+            }
+
+            .about-stamp {
+                left: 20px;
+                top: -50px;
+                transform: none
+            }
+
+            .about-img-wrap {
+                min-height: 340px
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .booking-block {
+                grid-template-columns: 1fr;
+                padding: 44px
+            }
+
+            .testi-grid {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr 1fr;
+                gap: 38px
+            }
+        }
+
+        @media(max-width:768px) {
+
+            .about-wrap,
+            .news-wrap,
+            .pricing-wrap,
+            .schedule-wrap,
+            .booking-wrap,
+            .testi-wrap {
+                padding-left: 20px;
+                padding-right: 20px
+            }
+
+            .site-header {
+                padding: 0 20px
+            }
+
+            .site-header__nav {
+                display: none
+            }
+
+            .hero-card {
+                height: auto;
+                min-height: 72vh;
+                padding-bottom: 220px;
+                /* Extra spacer for stacked mobile cards */
+            }
+
+            .hero-floats {
+                left: 16px;
+                right: 16px;
+                bottom: 16px
+            }
+
+            .hero-bento {
+                width: 100%
+            }
+
+            .hero-stats-right {
+                display: none
+            }
+
+            .news-block {
+                clip-path: none;
+                border-radius: var(--r-lg);
+                padding: 30px
+            }
+
+            .news-block::after {
+                display: none
+            }
+
+            .news-item {
+                grid-template-columns: 1fr;
+                gap: 10px
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                grid-auto-rows: 230px
+            }
+
+            .price-promo {
+                grid-column: span 1;
+                flex-direction: column;
+                gap: 20px
+            }
+
+            .price-promo__right {
+                text-align: left
+            }
+
+            .testi-grid {
+                grid-template-columns: 1fr
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr
+            }
+
+            .footer-brandmark {
+                margin-left: 0;
+                margin-right: auto;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center
+            }
+
+            .booking-block {
+                padding: 32px
+            }
+
+            .booking-headline {
+                font-size: 2.2rem
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- HEADER -->
+    <header class="site-header" id="siteHeader">
+        <a href="#home" class="site-header__logo"><img src="assets/logo Borneo Padel.svg" alt="Logo Delevasa Padel"
+                style="height:42px; width:auto;"></a>
+        <nav class="site-header__nav">
+            <a href="#home">Beranda</a>
+            <a href="#about">Tentang Kami</a>
+            <a href="#pricing">Harga</a>
+            <a href="#events">Event</a>
+            <a href="#schedule">Jadwal</a>
+            <a href="#booking" class="nav-cta">Booking Lapangan</a>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section id="home">
+        <div class="hero-wrap">
+            <div class="hero-card">
+                <img src="assets/images/hero-padel.jpg" alt="Lapangan Padel Delevasa Padel Banjarbaru"
+                    class="hero-card__img">
+                <div class="hero-card__overlay"></div>
+                <h1 class="hero-card__headline">
+                    The place where<br><em>sport became
+                        lifestyle</em>
+                </h1>
+
+                <!-- Float Left -->
+                <div class="hero-floats">
+                    <div class="hero-bento reveal">
+                        <div class="hero-bento__title">Sewa Lapangan</div>
+                        <div class="hero-bento__body">Pengalaman main padel di lapangan pink super estetik dengan vibe
+                            chill untuk Gen Z dan milenial.</div>
+                        <button class="btn btn-dark"
+                            onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Selengkapnya</button>
+                    </div>
+                    <div class="hero-bento dark reveal d1">
+                        <div class="hero-bento__title">Harga Mulai</div>
+                        <div class="hero-price-big">350k</div>
+                        <span class="hero-price-unit">konfirmasi harga via WhatsApp</span>
+                        <button class="btn btn-light"
+                            onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">Lihat
+                            Harga</button>
+                    </div>
+                </div>
+
+                <!-- Float Right -->
+                <div class="hero-stats-right">
+                    <div class="hstat">
+                        <div class="hstat__num">2</div>
+                        <div class="hstat__lbl">Lapangan</div>
+                    </div>
+                    <div class="hstat">
+                        <div class="hstat__num">2025</div>
+                        <div class="hstat__lbl">Tahun Berdiri</div>
+                    </div>
+                    <div class="hstat">
+                        <div class="hstat__num">HOT</div>
+                        <div class="hstat__lbl">Status Prospek</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="about-wrap">
+            <!-- Meta bar -->
+            <div class="meta-bar reveal">
+                <span class="meta-bar__side">Est. 2025</span>
+                <span class="meta-bar__center">Delevasa Padel</span>
+                <span class="meta-bar__side">Banjarbaru</span>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-text-card reveal">
+                    <span class="about-badge">Klub Kami</span>
+                    <h2 class="about-title">Lapangan estetik pink dengan vibe chill di Banjarbaru.</h2>
+                    <p class="about-desc">Delevasa Padel berlokasi di Jl. Perdagangan, Loktabat Utara, Kec. Banjarbaru
+                        Utara, Kota Banjar Baru, Kalimantan Selatan 70714, menghadirkan pengalaman bermain yang visual,
+                        clean, dan nyaman.</p>
+                    <p class="about-desc">Menawarkan pengalaman main padel di lapangan pink super estetik dengan vibe
+                        chill, sesuai target pasar Gen Z dan milenial.</p>
+                    <ul class="about-facilities">
+                        <li><span>&#10003;</span> Lapangan 100% Indoor dengan karpet Pink estetik.</li>
+                        <li><span>&#10003;</span> Fasilitas lengkap: Cafe, Ruang Ganti, &amp; Loker.</li>
+                        <li><span>&#10003;</span> Kamar mandi bersih dilengkapi Shower Air Hangat.</li>
+                        <li><span>&#10003;</span> Tersedia layanan pelatih (Coach) profesional &amp; komunikatif.</li>
+                    </ul>
+                    <div class="about-note">
+                        <strong>Dirancang untuk pengalaman visual yang kuat.</strong><br>
+                        Lapangan estetik berwarna pink dengan pendekatan desain clean untuk komunitas aktif dan kreatif.
+                    </div>
+                </div>
+
+                <div class="about-img-wrap reveal d2">
+                    <img src="assets/images/about-padel.jpg" alt="Pemain Padel Delevasa Padel">
+                    <div class="about-stamp">
+                        <span class="about-stamp__main">DELEVASA</span>
+                        <span class="about-stamp__sub">PINK VIBES</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWS & EVENTS -->
+    <section id="events">
+        <div class="news-wrap">
+            <div class="meta-bar reveal">
+                <span class="meta-bar__side">News</span>
+                <span class="meta-bar__center">Delevasa Padel</span>
+                <span class="meta-bar__side">Events</span>
+            </div>
+
+            <div class="news-block">
+                <div class="news-header">
+                    <h2 class="news-title">News &amp; events</h2>
+                </div>
+                <div class="news-list">
+                    <div class="news-item news-item--done reveal">
+                        <div>
+                            <div class="news-item__time">08:00 &mdash; 20:00</div>
+                            <div class="news-item__date">9&ndash;12 April 2026</div>
+                        </div>
+                        <div>
+                            <div class="news-item__title">Open Play Session Delevasa</div>
+                            <div class="news-item__sub">Komunitas umum &middot; Friendly match &middot; Delevasa Padel,
+                                Banjarbaru
+                            </div>
+                        </div>
+                        <div><span class="tag-done">Selesai</span></div>
+                    </div>
+                    <div class="news-item reveal d1">
+                        <div>
+                            <div class="news-item__time">08:00 &mdash; 20:00</div>
+                            <div class="news-item__date">Agustus 2026</div>
+                        </div>
+                        <div>
+                            <div class="news-item__title">Delevasa Weekend Social Match</div>
+                            <div class="news-item__sub">Open registration &middot; Semua kategori</div>
+                        </div>
+                        <div><button class="btn btn-dark">Daftar</button></div>
+                    </div>
+                    <div class="news-item reveal d2">
+                        <div>
+                            <div class="news-item__time">09:00 &mdash; 12:00</div>
+                            <div class="news-item__date">November 2026</div>
+                        </div>
+                        <div>
+                            <div class="news-item__title">Pink Court Beginner Clinic</div>
+                            <div class="news-item__sub">Semua level pemula &middot; Instruktur berpengalaman</div>
+                        </div>
+                        <div><button class="btn btn-dark">Daftar</button></div>
+                    </div>
+                    <div class="news-item reveal d3">
+                        <div>
+                            <div class="news-item__time">16:00 &mdash; 20:00</div>
+                            <div class="news-item__date">Desember 2026</div>
+                        </div>
+                        <div>
+                            <div class="news-item__title">Community Fun Rally Night</div>
+                            <div class="news-item__sub">Penutup tahun &middot; Exhibition terbuka &middot; Gratis nonton
+                            </div>
+                        </div>
+                        <div><button class="btn btn-dark">Daftar</button></div>
+                    </div>
+                </div>
+
+                <!-- CTA Banner Event -->
+                <div class="news-cta reveal d2">
+                    <div class="news-cta__text">
+                        <h3>Buat Event-mu Disini!</h3>
+                        <p>Corporate gathering, turnamen swasta, atau fun match bersama teman-teman Diskusikan event
+                            seru padelmu dengan kami.</p>
+                    </div>
+                    <a href="https://wa.me/6288973265850" target="_blank" class="btn btn-light"
+                        style="flex-shrink:0;">Diskusikan Event</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing">
+        <div class="pricing-wrap">
+            <div class="meta-bar reveal">
+                <span class="meta-bar__side">Tarif</span>
+                <span class="meta-bar__center">Delevasa Padel</span>
+                <span class="meta-bar__side">Sewa</span>
+            </div>
+
+            <div class="pricing-header reveal">
+                <h2>Pilih cara mainmu.</h2>
+                <p>Tarif menyesuaikan sesi permainan. Detail harga mengikuti konfirmasi admin Delevasa Padel.</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Wide Promo -->
+                <div class="price-promo reveal">
+                    <div>
+                        <div class="price-promo__label">Penawaran Terbaik</div>
+                        <div class="price-promo__title">Akses Penuh<br>Pink Court Experience</div>
+                        <div class="price-promo__desc">Booking fleksibel dengan tarif terjangkau untuk lapangan
+                            dengan konsep visual estetik khas Delevasa Padel di Banjarbaru.</div>
+                    </div>
+                    <div class="price-promo__right">
+                        <div class="price-promo__price">Hubungi Admin <span class="price-promo__unit">untuk tarif</span>
+                        </div>
+                        <button class="btn btn-light"
+                            onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Booking
+                            Sekarang</button>
+                    </div>
+                </div>
+
+                <!-- Card 1 -->
+                <div class="price-card reveal d1">
+                    <span class="price-card__tag">Weekday</span>
+                    <img src="assets/images/price-lapangan.jpg" alt="Sewa Lapangan" class="price-card__bg">
+                    <div class="price-card__overlay"></div>
+                    <div class="price-card__body">
+                        <div class="price-card__type">Sewa Lapangan</div>
+                        <div class="price-card__cost">Rp 350.000 / Jam</div>
+                        <button class="btn btn-light"
+                            onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Booking</button>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="price-card reveal d2">
+                    <span class="price-card__tag">Peak Hour</span>
+                    <img src="assets/images/price-peakhour.jpg" alt="Peak Hour" class="price-card__bg">
+                    <div class="price-card__overlay"></div>
+                    <div class="price-card__body">
+                        <div class="price-card__type">Sore &amp; Weekend</div>
+                        <div class="price-card__cost">Rp 350.000 / Jam</div>
+                        <button class="btn btn-light"
+                            onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Booking</button>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="price-card reveal d3">
+                    <img src="assets/images/price-raket.jpg" alt="Sewa Raket" class="price-card__bg">
+                    <div class="price-card__overlay"></div>
+                    <div class="price-card__body">
+                        <div class="price-card__type">Sewa Raket</div>
+                        <div class="price-card__cost">Rp 30.000 &ndash; 50.000 / Sesi</div>
+                        <button class="btn btn-light"
+                            onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Sewa</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCHEDULE -->
+    <section id="schedule">
+        <div class="schedule-wrap">
+            <div class="meta-bar reveal">
+                <span class="meta-bar__side">Jadwal</span>
+                <span class="meta-bar__center">Delevasa Padel</span>
+                <span class="meta-bar__side">Harian</span>
+            </div>
+
+            <div class="interactive-schedule">
+                <!-- Left: Calendar -->
+                <div class="isched-left reveal">
+                    <div class="isched-cal">
+                        <div class="cal-header">April 2026</div>
+                        <div class="cal-days">
+                            <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
+                        </div>
+                        <div class="cal-grid">
+                            <span class="cal-date muted">29</span><span class="cal-date muted">30</span><span
+                                class="cal-date muted">31</span>
+                            <span class="cal-date">1</span><span class="cal-date">2</span><span
+                                class="cal-date">3</span><span class="cal-date">4</span>
+                            <span class="cal-date">5</span><span class="cal-date">6</span><span
+                                class="cal-date">7</span><span class="cal-date">8</span><span
+                                class="cal-date active">9</span><span class="cal-date">10</span><span
+                                class="cal-date">11</span>
+                            <span class="cal-date">12</span><span class="cal-date">13</span><span
+                                class="cal-date">14</span><span class="cal-date">15</span><span
+                                class="cal-date">16</span><span class="cal-date">17</span><span
+                                class="cal-date">18</span>
+                        </div>
+                    </div>
+                    <div class="isched-toggle">
+                        <button class="tgl-btn active">Court 1</button>
+                        <button class="tgl-btn">Court 2</button>
+                    </div>
+                    <div class="booking-rental-info">
+                        <p class="booking-rental-info__title">Info Sewa Perlengkapan</p>
+                        <div class="booking-rental-info__list">
+                            <div class="booking-rental-info__row">
+                                <span class="booking-rental-info__item">Regular Racket</span>
+                                <span class="booking-rental-info__price">Konfirmasi Admin</span>
+                            </div>
+                            <div class="booking-rental-info__row">
+                                <span class="booking-rental-info__item">Premium Racket</span>
+                                <span class="booking-rental-info__price">Konfirmasi Admin</span>
+                            </div>
+                            <div class="booking-rental-info__row">
+                                <span class="booking-rental-info__item">Towel</span>
+                                <span class="booking-rental-info__price">Konfirmasi Admin</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Time Slots -->
+                <div class="isched-right reveal d1">
+                    <div class="isched-header">
+                        <h3>Pilih Slot Waktu</h3>
+                        <p>Kamis, 9 April 2026</p>
+                    </div>
+                    <div class="isched-slots">
+                        <div class="slot-box available" onclick="bookSlot('06:00', 'Rp 350.000')"><span
+                                class="slot-time">06:00</span><span class="slot-price">Rp 350.000</span></div>
+                        <div class="slot-box available" onclick="bookSlot('07:00', 'Rp 350.000')"><span
+                                class="slot-time">07:00</span><span class="slot-price">Rp 350.000</span></div>
+                        <div class="slot-box booked"><span class="slot-time">08:00</span><span
+                                class="slot-price">Booked</span></div>
+                        <div class="slot-box booked"><span class="slot-time">09:00</span><span
+                                class="slot-price">Booked</span></div>
+                        <div class="slot-box available" onclick="bookSlot('10:00', 'Rp 350.000')"><span
+                                class="slot-time">10:00</span><span class="slot-price">Rp 350.000</span></div>
+                        <div class="slot-box available" onclick="bookSlot('11:00', 'Rp 350.000')"><span
+                                class="slot-time">11:00</span><span class="slot-price">Rp 350.000</span></div>
+                        <div class="slot-box available" onclick="bookSlot('12:00', 'Rp 350.000')"><span
+                                class="slot-time">12:00</span><span class="slot-price">Rp 350.000</span></div>
+                        <div class="slot-box booked"><span class="slot-time">13:00</span><span
+                                class="slot-price">Booked</span></div>
+                        <div class="slot-box booked"><span class="slot-time">14:00</span><span
+                                class="slot-price">Booked</span></div>
+                        <div class="slot-box booked"><span class="slot-time">15:00</span><span
+                                class="slot-price">Booked</span></div>
+                        <div class="slot-box available" onclick="bookSlot('16:00', 'Rp 350.000')"><span
+                                class="slot-time">16:00</span><span class="slot-price">Rp 350.000</span></div>
+                        <div class="slot-box booked"><span class="slot-time">17:00</span><span
+                                class="slot-price">Booked</span></div>
+                        <div class="slot-box booked"><span class="slot-time">18:00</span><span
+                                class="slot-price">Booked</span></div>
+                        <div class="slot-box available" onclick="bookSlot('19:00', 'Rp 350.000')"><span
+                                class="slot-time">19:00</span><span class="slot-price">Rp 350.000</span></div>
+                        <div class="slot-box booked"><span class="slot-time">20:00</span><span
+                                class="slot-price">Booked</span></div>
+                        <div class="slot-box booked"><span class="slot-time">21:00</span><span
+                                class="slot-price">Booked</span></div>
+                        <div class="slot-box available" onclick="bookSlot('22:00', 'Rp 350.000')"><span
+                                class="slot-time">22:00</span><span class="slot-price">Rp 350.000</span></div>
+                        <div class="slot-box available" onclick="bookSlot('23:00', 'Rp 350.000')"><span
+                                class="slot-time">23:00</span><span class="slot-price">Rp 350.000</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKING -->
+    <section id="booking">
+        <div class="booking-wrap">
+            <div class="meta-bar reveal">
+                <span class="meta-bar__side">Reservasi</span>
+                <span class="meta-bar__center">Delevasa Padel</span>
+                <span class="meta-bar__side">Booking</span>
+            </div>
+
+            <div class="booking-block">
+                <div class="reveal">
+                    <p class="booking-label">Booking Lapangan</p>
+                    <h2 class="booking-headline">Amankan<br>slot-mu<br>sekarang.</h2>
+                    <p class="booking-desc">Lapangan penuh hampir setiap hari. Isi formulir untuk request booking
+                        langsung via WhatsApp, atau gunakan aplikasi AYO Indonesia.</p>
+                    <div class="booking-steps">
+                        <div class="bstep">
+                            <div class="bstep-num">1</div>
+                            <div class="bstep-text"><strong>Pilih tanggal, lapangan, dan jam.</strong><br>Court 1 atau
+                                Court 2 tersedia sesuai jadwal operasional.</div>
+                        </div>
+                        <div class="bstep">
+                            <div class="bstep-num">2</div>
+                            <div class="bstep-text"><strong>Kirim request via WhatsApp.</strong><br>Tim kami merespons
+                                dalam 1 jam untuk konfirmasi dan pembayaran.</div>
+                        </div>
+                        <div class="bstep">
+                            <div class="bstep-num">3</div>
+                            <div class="bstep-text"><strong>Bayar dan main.</strong><br>Datang 15 menit sebelum sesi.
+                                Bola tidak disewakan &mdash; bawa sendiri.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="booking-form reveal d2">
+                    <h3 class="bf-title">Request Booking</h3>
+                    <p class="bf-sub">Konfirmasi via WhatsApp dalam 1x24 jam.</p>
+                    <div class="fgroup">
+                        <label class="flabel">Nama Lengkap</label>
+                        <input type="text" class="finput" placeholder="contoh: Budi Santoso" id="f-name">
+                    </div>
+                    <div class="fgroup">
+                        <label class="flabel">Nomor WhatsApp</label>
+                        <input type="tel" class="finput" placeholder="08xxxxxxxxxx" id="f-phone">
+                    </div>
+                    <div class="frow">
+                        <div class="fgroup">
+                            <label class="flabel">Tanggal</label>
+                            <input type="date" class="finput" id="f-date">
+                        </div>
+                        <div class="fgroup">
+                            <label class="flabel">Lapangan</label>
+                            <div class="fsel-wrap">
+                                <select class="fselect" id="f-court">
+                                    <option value="">Pilih</option>
+                                    <option value="Court 1">Court 1</option>
+                                    <option value="Court 2">Court 2</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="frow">
+                        <div class="fgroup">
+                            <label class="flabel">Jam Mulai</label>
+                            <div class="fsel-wrap">
+                                <select class="fselect" id="f-start">
+                                    <option value="">Pilih Jam</option>
+                                    <option>06:00</option>
+                                    <option>07:00</option>
+                                    <option>08:00</option>
+                                    <option>09:00</option>
+                                    <option>10:00</option>
+                                    <option>11:00</option>
+                                    <option>12:00</option>
+                                    <option>13:00</option>
+                                    <option>14:00</option>
+                                    <option>15:00</option>
+                                    <option>16:00</option>
+                                    <option>17:00</option>
+                                    <option>18:00</option>
+                                    <option>19:00</option>
+                                    <option>20:00</option>
+                                    <option>21:00</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="fgroup">
+                            <label class="flabel">Durasi</label>
+                            <div class="fsel-wrap">
+                                <select class="fselect" id="f-dur">
+                                    <option value="1 Jam">1 Jam</option>
+                                    <option value="1.5 Jam">1.5 Jam</option>
+                                    <option value="2 Jam">2 Jam</option>
+                                    <option value="3 Jam">3 Jam</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="fsubmit" id="sendWA">Kirim Request via WhatsApp</button>
+                    <p class="falt">Atau langsung booking via <a href="https://ayo.co.id" target="_blank">Aplikasi AYO
+                            Indonesia</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery">
+        <div class="gallery-wrap">
+            <div class="meta-bar reveal">
+                <span class="meta-bar__side">Momen</span>
+                <span class="meta-bar__center">Delevasa Padel</span>
+                <span class="meta-bar__side">Galeri</span>
+            </div>
+
+            <div class="gallery-header reveal">
+                <h2>Our Community in Action.</h2>
+                <p>Jadilah bagian dari komunitas padel estetik di Banjarbaru. Mulai dari pemula hingga pemain rutin,
+                    nikmati vibe pink yang santai dan seru.</p>
+            </div>
+
+            <div class="bento-gallery">
+                <!-- Large Box -->
+                <div class="bento-item bento-large reveal">
+                    <img src="assets/images/gal-1.jpg" alt="Aksi di Lapangan">
+                    <div class="bento-overlay">
+                        <h3>Where movement becomes a lifestyle.</h3>
+                    </div>
+                </div>
+
+                <!-- Text Box Dark -->
+                <div class="bento-item bento-text-dark reveal d1">
+                    <h3>Your play.<br>Your rhythm.</h3>
+                    <p>Temukan ritme permainanmu sendiri dan nikmati setiap momen berlatih dan bertanding.</p>
+                    <div class="bento-arrow">&#8599;</div>
+                </div>
+
+                <!-- Small Image 1 -->
+                <div class="bento-item bento-img-top reveal d2">
+                    <img src="assets/images/gal-2.jpg" alt="Pemain Padel">
+                </div>
+
+                <!-- Small Image 2 -->
+                <div class="bento-item bento-empty reveal">
+                    <img src="assets/images/gal-3.jpg" alt="Komunitas Padel">
+                </div>
+
+                <!-- Wide Image Box -->
+                <div class="bento-item bento-wide reveal d1">
+                    <img src="assets/images/gal-4.jpg" alt="Pertandingan Padel">
+                </div>
+
+                <!-- Text Box Highlight (Terracotta) -->
+                <div class="bento-item bento-text-gold reveal d2">
+                    <h3>A community that moves together</h3>
+                    <p>Bergabung bersama komunitas Delevasa Padel yang aktif dan terus bertumbuh.</p>
+                    <div class="bento-arrow">&#8599;</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS & TESTIMONIALS -->
+    <section id="reviews">
+        <div class="testi-wrap">
+            <div class="testi-hdr reveal">
+                <p class="testi-hdr__label">Kata Mereka</p>
+                <h2 class="testi-hdr__title">Komunitas yang tumbuh bersama.</h2>
+            </div>
+            <div class="review-bento">
+                <div class="review-main reveal">
+                    <div class="review-score">5.0</div>
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <div class="review-desc">Berdasarkan Ulasan Google Maps</div>
+                </div>
+                <div class="review-list">
+                    <div class="review-card reveal d1">
+                        <p>"Tempat nyaman, ada cafe, ruang ganti, loker, shower air hangat."</p>
+                        <div class="rev-author">- Gandu Yulio</div>
+                    </div>
+                    <div class="review-card reveal d2">
+                        <p>"Standar lapangan cocok untuk cewek, karna court nya warna pink."</p>
+                        <div class="rev-author">- Mulyanti S.</div>
+                    </div>
+                    <div class="review-card reveal d3">
+                        <p>"Tempatnya keren, nyaman, Coach-nya bagus sekali &amp; komunikatif. Pokoknya mantap!"</p>
+                        <div class="rev-author">- Agustina W.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATION MAP -->
+    <section id="location"
+        style="position: relative; padding: 120px 40px; overflow: hidden; display: flex; align-items: center; justify-content: center; margin-top: 40px;">
+        <!-- Background Image -->
+        <div class="loc-bg" style="position: absolute; inset: 0; z-index: -2;">
+            <img src="assets/images/lokasi-padel.jpg" alt="Delevasa Padel Area"
+                style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+        </div>
+        <!-- Dark Overlay -->
+        <div class="loc-overlay"
+            style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(17,17,17,0.98) 0%, rgba(17,17,17,0.7) 100%); z-index: -1;">
+        </div>
+
+        <div class="loc-wrap reveal"
+            style="max-width: 1200px; width: 100%; display: grid; grid-template-columns: 1fr 550px; gap: 60px; align-items: center; z-index: 1;">
+
+            <div class="loc-text">
+                <span class="about-badge"
+                    style="border-color: var(--brand-red); color: var(--brand-red); margin-bottom: 20px;">Temukan
+                    Kami</span>
+                <h2
+                    style="font-family: var(--sport); font-size: 4.5rem; color: #fff; line-height: 1.1; margin: 0 0 24px; text-transform: uppercase; text-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                    Kamu Bisa<br>Bermain<br>Disini.</h2>
+                <a href="https://www.google.com/maps?q=Delevasa+padel,+Jl.+Perdagangan,+Loktabat+Utara,+Kec.+Banjarbaru+Utara,+Kota+Banjar+Baru,+Kalimantan+Selatan+70714"
+                    target="_blank" class="btn btn-dark"
+                    style="background: var(--brand-red); color: #fff; padding: 18px 45px; font-size: 1.1rem;">Dapatkan
+                    Arahan di Maps</a>
+            </div>
+
+            <div class="loc-glass reveal d2">
+                <div class="loc-map"
+                    style="padding: 8px; border-radius: 22px; background: linear-gradient(145deg, rgba(255,255,255,0.18), rgba(255,255,255,0.05)); border: 1px solid rgba(255, 111, 174, 0.6); box-shadow: 0 26px 48px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.08) inset, 0 0 28px rgba(255,111,174,0.24);">
+                    <!-- Google Maps Iframe -->
+                    <iframe
+                        src="https://www.google.com/maps?q=Delevasa+padel,+Jl.+Perdagangan,+Loktabat+Utara,+Kec.+Banjarbaru+Utara,+Kota+Banjar+Baru,+Kalimantan+Selatan+70714&output=embed"
+                        width="100%" height="300"
+                        style="border: 2px solid rgba(255,255,255,0.32); border-radius: 16px; overflow: hidden; box-shadow: 0 14px 28px rgba(0,0,0,0.35);"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="loc-info" style="padding: 20px 6px 0; color: #fff;">
+                    <h3
+                        style="color: #ffffff; font-size: 1.5rem; margin-bottom: 10px; text-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);">
+                        Delevasa Padel Club</h3>
+                    <p
+                        style="color: rgba(255, 255, 255, 0.94); line-height: 1.7; text-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);">
+                        Jl. Perdagangan, Loktabat Utara, Kec. Banjarbaru Utara, Kota Banjar Baru, Kalimantan Selatan
+                        70714</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-top">
+            <div>
+                <div class="footer-logo">Delevasa<span>.</span>Padel</div>
+                <p class="footer-tagline">
+                    Delevasa Padel menawarkan pengalaman bermain padel dengan nuansa pink estetik, visual clean, dan
+                    vibe chill untuk komunitas Gen Z dan milenial.
+                </p>
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/delevasa_padel/" target="_blank" class="footer-social"
+                        aria-label="Instagram Delevasa Padel" title="Instagram">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path
+                                d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.8A3.95 3.95 0 0 0 3.8 7.75v8.5a3.95 3.95 0 0 0 3.95 3.95h8.5a3.95 3.95 0 0 0 3.95-3.95v-8.5a3.95 3.95 0 0 0-3.95-3.95h-8.5Zm8.9 1.55a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4Z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.tiktok.com/@delevasapadel?_r=1&_t=zs-91muscheln3" target="_blank"
+                        class="footer-social" aria-label="TikTok delevasapadel" title="TikTok @delevasapadel">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path
+                                d="M14.48 3h2.72a4.72 4.72 0 0 0 3.8 3.8v2.76a7.45 7.45 0 0 1-3.76-1.06v6.83a6.33 6.33 0 1 1-5.47-6.27v2.86a3.52 3.52 0 1 0 2.71 3.41V3Z" />
+                        </svg>
+                    </a>
+                    <a href="https://wa.me/6288973265850" target="_blank" class="footer-social"
+                        aria-label="WhatsApp Delevasa Padel" title="WhatsApp">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path
+                                d="M12.04 2A9.94 9.94 0 0 0 3.46 16.95L2 22l5.18-1.36A9.96 9.96 0 1 0 12.04 2Zm0 1.9a8.06 8.06 0 0 1 6.95 12.1l-.2.34-.86 1.38-.47.76-3.09-.8-.67.4a8.06 8.06 0 0 1-4.14 1.14 8.06 8.06 0 0 1-4.24-14.9 8.06 8.06 0 0 1 6.72-.42Zm-4.35 4.9c-.28 0-.72.1-1.1.5-.38.4-1.45 1.41-1.45 3.43 0 2.01 1.49 3.95 1.7 4.22.2.27 2.9 4.45 7.03 6.06.98.42 1.75.67 2.35.86.98.31 1.88.27 2.58.16.79-.12 2.44-1 2.78-1.96.34-.96.34-1.79.24-1.96-.1-.16-.37-.27-.78-.47-.41-.2-2.43-1.2-2.8-1.33-.38-.14-.65-.2-.92.2-.27.41-1.06 1.33-1.3 1.6-.24.27-.48.3-.9.1-.41-.2-1.73-.64-3.29-2.05-1.21-1.08-2.03-2.42-2.27-2.83-.24-.4-.03-.62.18-.82.19-.19.41-.48.61-.72.2-.24.27-.41.4-.68.14-.27.07-.51-.03-.72-.1-.2-.92-2.2-1.26-3.02-.33-.8-.66-.69-.92-.7h-.78Z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h4 class="footer-col-title">Lokasi</h4>
+                <ul class="footer-links">
+                    <li>Jl. Perdagangan, Loktabat Utara</li>
+                    <li>Kec. Banjarbaru Utara</li>
+                    <li>Kota Banjar Baru, Kalimantan Selatan 70714</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-col-title">Hubungi Kami</h4>
+                <div style="margin-top:20px;">
+                    <a href="https://wa.me/6288973265850" target="_blank" class="btn btn-light"
+                        style="padding: 12px 30px; border-radius: var(--r-pill);">WhatsApp Hub</a>
+                </div>
+                <img src="assets/logo Borneo Padel.svg" alt="Logo Delevasa Padel" class="footer-brandmark">
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-copy">&copy; 2026 Delevasa Padel. All rights reserved.</div>
+            <div class="footer-copy">Email: padeldelevasa@gmail.com</div>
+            <div class="footer-legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://autogrowthid.site" target="_blank" rel="noopener noreferrer" class="dev-watermark"
+        aria-label="Website ini dibuat oleh Autogrowth.id">
+        <span class="dev-watermark__dot">AG</span>
+        <span class="dev-watermark__text">Website ini dibuat oleh Autogrowth.id</span>
+    </a>
+
+    <script>
+        /* Sticky header */
+        const hdr = document.getElementById('siteHeader');
+        window.addEventListener('scroll', () => { hdr.classList.toggle('scrolled', window.scrollY > 60) }, { passive: true });
+
+        /* Reveal on scroll */
+        const obs = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target) } })
+        }, { threshold: .1 });
+        document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+        /* Min date */
+        const de = document.getElementById('f-date');
+        if (de) { de.min = new Date().toISOString().split('T')[0]; de.value = de.min }
+
+        /* WhatsApp booking */
+        document.getElementById('sendWA').addEventListener('click', () => {
+            const n = document.getElementById('f-name').value.trim();
+            const p = document.getElementById('f-phone').value.trim();
+            const d = document.getElementById('f-date').value;
+            const c = document.getElementById('f-court').value;
+            const s = document.getElementById('f-start').value;
+            const dur = document.getElementById('f-dur').value;
+            if (!n || !p || !c || !s) { alert('Mohon lengkapi semua data sebelum mengirim.'); return }
+            const ds = d ? new Date(d).toLocaleDateString('id-ID', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) : '-';
+            const msg = encodeURIComponent(
+                `Halo Delevasa Padel!\n\nSaya ingin request booking lapangan:\n` +
+                `- Nama      : ${n}\n- Tanggal   : ${ds}\n- Lapangan  : ${c}\n` +
+                `- Jam Mulai : ${s} WITA\n- Durasi    : ${dur}\n\n` +
+                `Mohon konfirmasi ketersediaan dan informasi pembayaran. Terima kasih.`
+            );
+            /* Ganti nomor di bawah dengan WA resmi Delevasa Padel */
+            window.open(`https://wa.me/6288973265850?text=${msg}`, '_blank');
+        });
+    </script>
+    <script>
+        function bookSlot(time, price) {
+            alert("Lanjutkan Booking jam " + time + " dengan harga " + price + "?");
+        }
+    </script>
+</body>
+
+</html>
+
+</html>
